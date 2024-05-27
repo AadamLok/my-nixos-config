@@ -119,6 +119,8 @@
     pkgs.python3
     # Git
     pkgs.git
+    # Encryption key genrator
+    pkgs.gnupg
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -172,6 +174,11 @@
       syntaxHighlighting.enable = true;
       histSize = 10000;
       histFile = "~/.history";
+    };
+    gnupg.agent = {
+      enable = true;
+      pinentryFlavor = "gtk2";
+      enableSSHSupport = true;
     };
   };
 
