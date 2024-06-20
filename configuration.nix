@@ -119,6 +119,7 @@
     pkgs.python3
     # Git
     pkgs.git
+    pkgs.github-desktop
     # Encryption key genrator
     pkgs.gnupg
   ];
