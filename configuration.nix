@@ -55,18 +55,19 @@
   services.xserver = {
     enable = true;
     videoDrivers = ["nvidia"];
-    displayManager = {
-      sddm.enable = true;
-    };
     desktopManager = {
       plasma5.enable = true;
     };
   };
 
+  services.displayManager = {
+    sddm.enable = true;
+  };
+
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -104,8 +105,8 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "aadamlok";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "aadamlok";
 
   # Install firefox.
   programs.firefox.enable = true;
