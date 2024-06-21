@@ -42,6 +42,13 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Auto-delete older version of nix store to free up space
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Enable the X11 windowing system.
   # Enable NVIDIA drivers
   # Enable the Plasma Desktop Environment.
