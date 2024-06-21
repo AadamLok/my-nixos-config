@@ -42,6 +42,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Support for flakes
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   # Auto-delete older version of nix store to free up space
   nix.gc = {
     automatic = true;
