@@ -119,6 +119,7 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
+    home-manager
     # For Oh-My-ZSH Shell
     pkgs.zsh
     pkgs.oh-my-zsh
