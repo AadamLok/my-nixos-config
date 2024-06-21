@@ -50,8 +50,10 @@
     videoDrivers = ["nvidia"];
     displayManager = {
       sddm.enable = true;
-    }
-    plasma5.enable = true;
+    };
+    desktopManager = {
+      plasma5.enable = true;
+    };
   };
 
   # Configure keymap in X11
@@ -180,7 +182,6 @@
     };
     gnupg.agent = {
       enable = true;
-      pinentryFlavor = "gtk2";
       enableSSHSupport = true;
     };
   };
