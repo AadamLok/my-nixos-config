@@ -43,14 +43,16 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable NVIDIA drivers
-  services.xserver.videoDrivers = ["nvidia"];
-
   # Enable the Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver = {
+    enable = true;
+    videoDrivers = ["nvidia"];
+    displayManager = {
+      sddm.enable = true;
+    }
+    plasma5.enable = true;
+  };
 
   # Configure keymap in X11
   services.xserver = {
