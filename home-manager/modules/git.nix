@@ -4,5 +4,5 @@
 		userName = "AadamLok";
 		userEmail = "alokhandwala@umass.edu";
 		signing.signByDefault = true;
-	}
+	};
 }
