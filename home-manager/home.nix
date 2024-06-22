@@ -9,6 +9,6 @@
 	};
 
 	imports = [
-		./zsh.nix
+		./modules/zsh.nix
 	];
 }
