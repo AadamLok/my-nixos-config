@@ -11,14 +11,22 @@
 	};
 
 	outputs = { nixpkgs, home-manager, ... }: {
-		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+		let 
 			system = "x86_64-linux";
-			modules = [ ./configuration.nix ];
-		};
+		in {
+			nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+				inherit system;
+				modules = [ 
+					./nixos/configuration.nix 
+				];
+			};
 		
-		homeConfigurations.aadamlok = home-manager.lib.homeManagerConfiguration {
-			pkgs = nixpkgs.legacyPackages.x86_64-linux;
-			modules = [ ./home.nix ];
+			homeConfigurations.aadamlok = home-manager.lib.homeManagerConfiguration {
+				pkgs = nixpkgs.legacyPackages.${system};
+				modules = [ 
+					./home-manager/home.nix 
+				];
+			};
 		};
 	};
 }
