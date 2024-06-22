@@ -6,6 +6,6 @@
 		signing = {
 			signByDefault = true;
 			key = "79293CA28AD1069C";
-		}
+		};
 	};
 }
