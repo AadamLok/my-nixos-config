@@ -19,7 +19,7 @@
 			rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
 		};
 		
-		ohMyZsh = {
+		oh-my-zsh = {
 			enable = true;
 			theme = "robbyrussell";
 			plugins = [
