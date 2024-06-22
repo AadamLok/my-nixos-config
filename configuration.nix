@@ -149,49 +149,6 @@
   # };
 
   programs = {
-    zsh = {
-      enable = true;
-      ohMyZsh = {
-        enable = true;
-        theme = "robbyrussell";
-        plugins = [
-          "sudo" # Hit esc to add sudo to command
-          "systemadmin" # Many useful things
-          # Important
-          # mkdir -> also makes any missing dirs
-          # tree -> displays all dirs in tree structure
-          # clrz -> clear zombie process
-          # port_pro -> shows process with port
-          # dls -> ls only dirs
-          "vi-mode" # vi like feature on shell
-          "web-search" # google/youtube/stackoverflow ... will search and open browser
-          "copypath" # copypath will copy pwd
-          "copyfile" # copyfile ... will copy the content of the file to your clipboard
-          "dirhistory" # Helps navigate dirs better
-          # Alt + left -> Go to previous dir
-          # Alt + right -> Go to next dir
-          # Alt + up -> Move to parent dir
-          # Alt + Down -> Move into first child dir
-          "history" # Command history
-          # h -> prints history
-          # hl -> pipe history to less
-          # hs -> pipe history to grep
-          # hsi -> pipe history to grep with case insensitive
-          "python" # Plugin for python use
-          # important once:
-          # mkv [name] -> make a virtual env
-          # vrun [name] -> run [name] virtual env
-          # pygrep <text> -> looks for <text> in *.py file recursively
-          # pyclean -> deletes byte-code and cache files
-          # pyfind -> finds all .py files recursively
-        ];
-      };
-      enableCompletion = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-      histSize = 10000;
-      histFile = "~/.history";
-    };
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
