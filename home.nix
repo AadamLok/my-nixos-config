@@ -16,7 +16,9 @@
 		shellAliases = {
 			ll = "ls -l";
 			la = "ls -la";
-			rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
+			rebuild-switch = "sudo nixos-rebuild switch --flake ~/nixos";
+			rebuild-boot = "sudo nixos-rebuild boot --flake ~/nixos";
+			hm-switch = "home-manager switch --flake ~/nixos/#aadamlok";
 		};
 		
 		oh-my-zsh = {
