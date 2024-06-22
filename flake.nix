@@ -11,16 +11,13 @@
 	};
 
 	outputs = { nixpkgs, home-manager, ... }: {
-		let 
-			system = "x86_64-linux";
-		in  
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-			inherit system;
+			system = "x86_64-linux";
 			modules = [ ./configuration.nix ];
 		};
 		
 		homeConfigurations.amper = home-manager.lib.homeManagerConfiguration {
-			pkgs = nixpkgs.legacyPackages.${system};
+			pkgs = nixpkgs.legacyPackages.x86_64-linux;
 			modules = [ ./home.nix ];
 		};
 	};
