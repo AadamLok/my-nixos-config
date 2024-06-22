@@ -5,16 +5,14 @@
 		stateVersion = "23.11";
 		packages = with pkgs; [
 			neofetch
-		]
+		];
 	};
 
 	programs.zsh = {
 		enable = true;
 		enableCompletion = true;
-		autosuggestions.enable = true;
+		autosuggestion.enable = true;
 		syntaxHighlighting.enable = true;
-		histSize = 10000;
-		histFile = "~/.history" 
 		shellAliases = {
 			ll = "ls -l";
 			la = "ls -la";
