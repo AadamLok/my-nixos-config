@@ -5,9 +5,12 @@
 		stateVersion = "23.11";
 	};
 
-	programs.bash = {
+	programs.zsh = {
 		enable = true;
 		shellAliases = {
+			ll = "ls -l";
+			la = "ls -a";
+			lla = "ls -la";
 			rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
 		}	
 	};
