@@ -16,7 +16,7 @@
 			modules = [ ./configuration.nix ];
 		};
 		
-		homeConfigurations.amper = home-manager.lib.homeManagerConfiguration {
+		homeConfigurations.aadamlok = home-manager.lib.homeManagerConfiguration {
 			pkgs = nixpkgs.legacyPackages.x86_64-linux;
 			modules = [ ./home.nix ];
 		};
