@@ -2,7 +2,6 @@
 	
 	hardware.opengl = {
 		enable = true;
-		driSupport = lib.mkDefault true;
 		driSupport32Bit = lib.mkDefault true;
 
 		extraPackages = with pkgs; [
