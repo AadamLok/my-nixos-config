@@ -1,6 +1,7 @@
 { pkgs, ... } : {
 	nixpkgs.config = {
 		allowUnfree = true;
+		allowUnsupportedSystem = true;
 	};
 
 	environment.systemPackages = with pkgs; [
