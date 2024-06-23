@@ -66,6 +66,22 @@
   #  enable = true;
   #  videoDrivers = ["nvidia"];
   #};
+  
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    
+    wlr = {
+      enable = true;
+    };
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-kde
+      xdg-desktop-portal-wlr
+    ];
+  }
 
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.theme = "breeze";
