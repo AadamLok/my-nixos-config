@@ -66,14 +66,7 @@
   #  enable = true;
   #  videoDrivers = ["nvidia"];
   #};
-  hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaPersistenced = true;
-    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
-    open = true;
-  };
 
-  systemd.defaultUnit = "graphical.target";
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.theme = "breeze";
   services.desktopManager.plasma6.enable = true;
