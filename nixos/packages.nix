@@ -4,12 +4,19 @@
 	};
 
 	environment.systemPackages = with pkgs; [
+		# Desktop Apps
+		teams
+		zoom-us
+		vlc
+
 		# Coding
 		vim
 		python3
+		sqlite
 		
 		# Productivity
-		tmux		
+		tmux
+		hyprland		
 
 		# For Oh-My-ZSH Shell
 		zsh
@@ -20,12 +27,13 @@
 		
 		# Utilities
 		wget
-		gnupg # for gpg key managment
+		gnupg
 		git
 		tree
 		htop
 		unzip
 		zip
+		gum # is something I want to look into
 
 		# NixOS helper
 		home-manager
