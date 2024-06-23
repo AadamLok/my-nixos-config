@@ -69,6 +69,7 @@
 
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.theme = "breeze";
+  services.displayManager.defaultSession = "plasma";
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
