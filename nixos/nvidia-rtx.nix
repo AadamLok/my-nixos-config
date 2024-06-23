@@ -12,7 +12,7 @@
 		powerManagement.finegrained = false;
 		open = false;
 		nvidiaSettings = true;
-		pakage = config.boot.kernelPackages.nvidiaPackages.stable;
+		package = config.boot.kernelPackages.nvidiaPackages.stable;
 	};
 	
 	boot.initrd.kernelModules = [ "nvidia" ];
