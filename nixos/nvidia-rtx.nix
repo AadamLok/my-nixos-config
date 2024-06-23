@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... } : {
 	
-	hardware.opengl = {
+	hardware.graphics = {
 		enable = true;
-		driSupport32Bit = lib.mkDefault true;
+		enable32Bit = lib.mkDefault true;
 
 		extraPackages = with pkgs; [
 			nvidia-vaapi-driver
@@ -36,7 +36,7 @@
 	environment.systemPackages = with pkgs; [
 		clinfo
 		gwe
-		nvtop-nvidia
+		nvtopPackages.nvidia
 		virtualglLib
 		vulkan-loader
 		vulkan-tools
