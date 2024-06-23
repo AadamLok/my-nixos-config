@@ -22,6 +22,10 @@
 		wget
 		gnupg # for gpg key managment
 		git
+		tree
+		htop
+		unzip
+		zip
 
 		# NixOS helper
 		home-manager
