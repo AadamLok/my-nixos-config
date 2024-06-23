@@ -3,7 +3,7 @@
 		allowUnfree = true;
 	};
 
-	enviroment.systemPackages = with pkgs; [
+	environment.systemPackages = with pkgs; [
 		# Coding
 		vim
 		python3
