@@ -14,6 +14,12 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.kernelModules = [
+    "nvidia"
+    "nvidia_modeset"
+    "nvidia_uvm"
+    "nvidia_drm"
+  ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -60,15 +66,28 @@
   #  enable = true;
   #  videoDrivers = ["nvidia"];
   #};
-  
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  }; 
+
+  hardware.nvidia = {
+    modesettings.enable = true;
+    nvidiaPersistenced = true;
+    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+    open = true;
+  };
+
+  systemd.defaultUnit = "graphical.target";
   services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.theme = "breeze";
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  #services.xserver.xkb = {
+  #  layout = "us";
+  #  variant = "";
+  #};
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
