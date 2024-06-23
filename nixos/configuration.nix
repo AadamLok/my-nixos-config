@@ -72,7 +72,7 @@
   }; 
 
   hardware.nvidia = {
-    modesettings.enable = true;
+    modesetting.enable = true;
     nvidiaPersistenced = true;
     package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
     open = true;
