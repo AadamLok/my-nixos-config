@@ -81,7 +81,7 @@
       xdg-desktop-portal-kde
       xdg-desktop-portal-wlr
     ];
-  }
+  };
 
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.theme = "breeze";
