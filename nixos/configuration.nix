@@ -6,8 +6,9 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
+      ./packages.nix
     ];
 
   # Bootloader.
@@ -113,32 +114,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    home-manager
-    # For Oh-My-ZSH Shell
-    pkgs.zsh
-    pkgs.oh-my-zsh
-    pkgs.zsh-completions
-    pkgs.zsh-syntax-highlighting
-    pkgs.zsh-history-substring-search
-    # For tmux
-    pkgs.tmux
-    # Python
-    pkgs.python3
-    # Git
-    pkgs.git
-    pkgs.github-desktop
-    # Encryption key genrator
-    pkgs.gnupg
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
