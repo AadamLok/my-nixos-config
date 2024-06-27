@@ -20,12 +20,12 @@
 		powerManagement.finegrained = false;
 		open = false;
 		nvidiaSettings = true;
-		package = config.boot.kernelPackages.nvidiaPackages.stable;
+		package = config.boot.kernelPackages.nvidiaPackages.unstable;
 	};
 	
+	boot.blacklistedKernelModules = [ "nouveau" ];
 	boot.initrd.kernelModules = [ "nvidia" ];
 	boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
-	boot.blacklistedKernelModules = [ "nouveau" ];
 
 	environment.variables = {
 		GBM_BACKEND = "nvidia-drm";
