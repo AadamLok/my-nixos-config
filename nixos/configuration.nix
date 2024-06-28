@@ -16,7 +16,7 @@
 		useOSProber = true;
 		gfxmodeEfi = "1280x720";
 		gfxmodeBios = "1280x720";
-	}
+	};
 
 	# Enable Flake and nix commands
 	nix.settings.experimental-features = [
