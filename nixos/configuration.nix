@@ -11,7 +11,7 @@
 	# Making grub the boot loader handler
 	boot.loader.grub = {
 		enable = true;
-		efiSUpport = true;
+		efiSupport = true;
 		device = "nodev";
 		useOSProber = true;
 		gfxmodeEfi = "1280x720";
