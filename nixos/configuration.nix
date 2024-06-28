@@ -26,9 +26,9 @@
 
 	# Networking
 	networking = {
-		hostName = "NixOS - NeuralBeast";
+		hostName = "NixOS-NeuralBeast";
 		networkmanager.enable = true;
-		wireless.enable = true;
+		#wireless.enable = true;
 	};
 
 	# Setting Time-Zone
@@ -40,14 +40,16 @@
 	# X11 Windowing System
 	services.xserver = {
 		enable = true;
-		videoDriver = [ "nvidia" ];
+		videoDrivers = [ 
+			"nvidia" 
+		];
 		layout = "us";
 		xkbVariant = "";
 	};
 
 	# KDE Plasma Desktop Environment
-	services.displayManager.sddm.enable = true;
-	services.desktopManager.plasma5.enable = true;
+	services.xserver.displayManager.sddm.enable = true;
+	services.xserver.desktopManager.plasma5.enable = true;
 
 	# Sound Managment with Pipewire
 	sound.enable = true;
