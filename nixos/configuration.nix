@@ -43,12 +43,14 @@
 		videoDrivers = [ 
 			"nvidia" 
 		];
-		layout = "us";
-		xkbVariant = "";
+		xkb = {
+			variant = "";
+			layout = "us";
+		};
 	};
 
 	# KDE Plasma Desktop Environment
-	services.xserver.displayManager.sddm.enable = true;
+	services.displayManager.sddm.enable = true;
 	services.xserver.desktopManager.plasma5.enable = true;
 
 	# Sound Managment with Pipewire
