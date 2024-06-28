@@ -58,7 +58,7 @@
 		alsa.enable = true;
 		alsa.support32Bit = true;
 		pulse.enable = true;
-	}
+	};
 
 	# Define User Account
 	users.users.aadamlok = {
