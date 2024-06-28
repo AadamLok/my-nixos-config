@@ -70,7 +70,7 @@
 		];
 		packages = with pkgs; [
 			kate
-		]
+		];
 	};
 
 	# Install FireFox
