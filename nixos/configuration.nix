@@ -9,7 +9,7 @@
 	boot.loader.efi.canTouchEfiVariables = true;
 	
 	# Making grub the boot loader handler
-	boot.grub = {
+	boot.loader.grub = {
 		enable = true;
 		efiSUpport = true;
 		device = "nodev";
