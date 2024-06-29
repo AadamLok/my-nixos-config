@@ -104,6 +104,7 @@
 		git
 		nixos-icons
 		xdg-utils
+		home-manager
 	];
 
 	xdg = {
