@@ -87,7 +87,7 @@
 			"wheel"
 		];
 		packages = with pkgs; [
-			kate
+			vlc
 		];
 	};
 
