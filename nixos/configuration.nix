@@ -3,6 +3,7 @@
 {
 	imports = [
 		./hardware-configuration.nix
+		./nvidia-rtx.nix
 	];
 
 	# Boot Loader for efi files
@@ -43,6 +44,9 @@
 
 	# Internationalisation Property
 	i18n.defaultLocale = "en_US.UTF-8";
+	
+	# Enabling GPU Drivers
+	hardware.graphics.enable = true;
 
 	# X11 Windowing System
 	services.xserver = {
@@ -57,7 +61,10 @@
 	};
 
 	# KDE Plasma Desktop Environment
-	services.displayManager.sddm.enable = true;
+	services.displayManager.sddm = {
+		enable = true;
+		theme = "breeze";
+	};
 	services.desktopManager.plasma6.enable = true;
 
 	# Sound Managment with Pipewire
@@ -95,7 +102,16 @@
 		vim
 		wget
 		git
+		nixos-icons
+		xdg-utils
 	];
+
+	xdg = {
+		autostart.enable = true;
+		icons.enable = true;
+		menus.enable = true;
+		mime.enable = true;
+	};
 
 	# System Version NEVER CHANGE
 	system.stateVersion = "23.11";
