@@ -7,10 +7,9 @@
 	config = {
 		boot.kernelParams = [ "nvidia-drm.modeset=1" ];
 
-		hardware.opengl = {
+		hardware.graphics = {
 			enable = true;
-			driSupport = true;
-			driSupport32Bit = true;
+			#driSupport32Bit = true;
 		};
 
 		services.xserver.videoDrivers = [ "nvidia" ];
