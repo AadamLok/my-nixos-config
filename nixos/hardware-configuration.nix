@@ -6,7 +6,6 @@
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
-      ./nvidia-rtx.nix
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
@@ -15,12 +14,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f874a65b-9c41-43b0-af82-0365b0a8f509";
+    { device = "/dev/disk/by-uuid/d0442dea-a3ac-4792-a9c5-a8365c3f259f";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/68C5-1A21";
+    { device = "/dev/disk/by-uuid/EB7A-A4BC";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };

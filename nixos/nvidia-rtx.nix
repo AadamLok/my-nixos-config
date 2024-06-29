@@ -1,44 +1,27 @@
-{ config, lib, pkgs, ... } : {
-	
-	hardware.graphics = {
-		enable = true;
-		enable32Bit = lib.mkDefault true;
-
-		extraPackages = with pkgs; [
-			nvidia-vaapi-driver
-			libvdpau
-			libvdpau-va-gl
-		];
+{ config, lib, pkgs, ... }:
+{
+	options = {
+		# Define any custom options here if needed.
 	};
 
-	services.xserver.videoDrivers = ["nvidia"];
+	config = {
+		boot.kernelParams = [ "nvidia-drm.modeset=1" ];
 
-	hardware.nvidia = {
-		modesetting.enable = true;
-		nvidiaPersistenced = true;
-		powerManagement.enable = true;
-		powerManagement.finegrained = false;
-		open = false;
-		nvidiaSettings = true;
-		package = config.boot.kernelPackages.nvidiaPackages.production;
+		hardware.graphics = {
+			enable = true;
+			#driSupport32Bit = true;
+		};
+
+		services.xserver.videoDrivers = [ "nvidia" ];
+
+		hardware.nvidia = {
+			#forceFullCompositionPipeline = true;
+			modesetting.enable = true;
+			powerManagement.enable = false;
+			powerManagement.finegrained = false;
+			open = false;
+			nvidiaSettings = true;
+			package = config.boot.kernelPackages.nvidiaPackages.stable;
+		};
 	};
-	
-	boot.blacklistedKernelModules = [ "nouveau" ];
-	boot.initrd.kernelModules = [ "nvidia" ];
-	boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
-
-	environment.variables = {
-		GBM_BACKEND = "nvidia-drm";
-		LIBVA_DRIVER_NAME = "nvidia";
-		__GLX_VENDOR_LIBRARY_NAME = "nvidia";
-	};
-
-	environment.systemPackages = with pkgs; [
-		clinfo
-		gwe
-		nvtopPackages.nvidia
-		virtualglLib
-		vulkan-loader
-		vulkan-tools
-	];
 }
