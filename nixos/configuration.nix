@@ -33,7 +33,7 @@
 
 	# Networking
 	networking = {
-		hostName = "NixOS-NeuralBeast";
+		hostName = "nixos";
 		networkmanager.enable = true;
 		#wireless.enable = true;
 	};
