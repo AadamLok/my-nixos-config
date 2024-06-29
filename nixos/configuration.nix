@@ -24,6 +24,13 @@
 		"flakes"
 	];
 
+	# Enable Garbage Collection
+	nix.gc = {
+		automatic = true;
+		dates = "weekly";
+		options = "--delete-older-than 15d";
+	};
+
 	# Networking
 	networking = {
 		hostName = "NixOS-NeuralBeast";
