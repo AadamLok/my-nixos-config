@@ -63,7 +63,7 @@
 
 	# KDE Plasma Desktop Environment
 	services.displayManager.sddm = {
-		enable = false;
+		enable = true;
 		theme = "breeze";
 		wayland.enable = true;
 	};
