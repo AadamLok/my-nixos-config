@@ -1,27 +1,23 @@
 { config, lib, pkgs, ... }:
 {
-	options = {
-		# Define any custom options here if needed.
+	
+	boot.kernelParams = [ "nvidia-drm.modeset=1" ];
+	boot.blacklistedKernelModules = lib.mkDefault [ "nouveau" ];
+	
+	hardware.graphics = {
+		enable = true;
+		#driSupport32Bit = true;
 	};
 
-	config = {
-		boot.kernelParams = [ "nvidia-drm.modeset=1" ];
+	services.xserver.videoDrivers = [ "nvidia" ];
 
-		hardware.graphics = {
-			enable = true;
-			#driSupport32Bit = true;
-		};
-
-		services.xserver.videoDrivers = [ "nvidia" ];
-
-		hardware.nvidia = {
-			#forceFullCompositionPipeline = true;
-			modesetting.enable = true;
-			powerManagement.enable = false;
-			powerManagement.finegrained = false;
-			open = false;
-			nvidiaSettings = true;
-			package = config.boot.kernelPackages.nvidiaPackages.stable;
-		};
+	hardware.nvidia = {
+		#forceFullCompositionPipeline = true;
+		modesetting.enable = true;
+		powerManagement.enable = false;
+		powerManagement.finegrained = false;
+		open = false;
+		nvidiaSettings = true;
+		package = config.boot.kernelPackages.nvidiaPackages.stable;
 	};
 }
