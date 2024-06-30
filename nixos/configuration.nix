@@ -86,13 +86,11 @@
 			"networkmanager" 
 			"wheel"
 		];
+		shell = pkgs.zsh;
 		packages = with pkgs; [
-			kate
+			vlc
 		];
 	};
-
-	# Install FireFox
-	programs.firefox.enable = true;
 
 	# Allow unfree packages
 	nixpkgs.config.allowUnfree = true;
@@ -100,11 +98,22 @@
 	# System Wide Packages
 	environment.systemPackages = with pkgs; [
 		vim
+		zsh
 		wget
 		git
 		nixos-icons
 		xdg-utils
+		home-manager
 	];
+
+	programs = {
+		firefox.enable = true;
+		zsh.enable = true;
+		gnupg.agent = {
+			enable = true;
+			enableSSHSupport = true;
+		};
+	};
 
 	xdg = {
 		autostart.enable = true;
