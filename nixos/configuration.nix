@@ -4,6 +4,7 @@
 	imports = [
 		./hardware-configuration.nix
 		./nvidia-rtx.nix
+		./packages.nix
 	];
 
 	# Boot Loader for efi files
@@ -88,23 +89,12 @@
 		];
 		shell = pkgs.zsh;
 		packages = with pkgs; [
-			vlc
+			# Nothing added all to global packages
 		];
 	};
 
 	# Allow unfree packages
 	nixpkgs.config.allowUnfree = true;
-
-	# System Wide Packages
-	environment.systemPackages = with pkgs; [
-		vim
-		zsh
-		wget
-		git
-		nixos-icons
-		xdg-utils
-		home-manager
-	];
 
 	programs = {
 		firefox.enable = true;
