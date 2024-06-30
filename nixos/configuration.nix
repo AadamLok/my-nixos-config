@@ -100,6 +100,7 @@
 	# System Wide Packages
 	environment.systemPackages = with pkgs; [
 		vim
+		zsh
 		wget
 		git
 		nixos-icons
