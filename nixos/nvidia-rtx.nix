@@ -1,8 +1,12 @@
 { config, lib, pkgs, ... }:
 {
 	
-	boot.kernelParams = [ "nvidia-drm.modeset=1" ];
-	boot.blacklistedKernelModules = lib.mkDefault [ "nouveau" ];
+	boot = {
+		kernelParams = [ "nvidia-drm.modeset=1" ];
+		blacklistedKernelModules = lib.mkDefault [ "nouveau" ];
+		initrd.kernelModules = [ "nvidia" ];
+		kernelModules = [ "nvidia" ];
+	};
 	
 	hardware.graphics = {
 		enable = true;

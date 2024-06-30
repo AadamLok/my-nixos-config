@@ -111,6 +111,12 @@
 		icons.enable = true;
 		menus.enable = true;
 		mime.enable = true;
+
+		portal = {
+			enable = true;
+			xdgOpenUsePortal = true;
+			wlr.enable = true;
+		};
 	};
 
 	# System Version NEVER CHANGE
