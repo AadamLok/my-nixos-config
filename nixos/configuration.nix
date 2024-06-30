@@ -51,7 +51,7 @@
 
 	# X11 Windowing System
 	services.xserver = {
-		enable = true;
+		enable = false;
 		videoDrivers = [ 
 			"nvidia" 
 		];
