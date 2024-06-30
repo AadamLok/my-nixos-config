@@ -5,7 +5,7 @@
 		autosuggestion.enable = true;
 		syntaxHighlighting.enable = true;
 		shellAliases = let
-			flakeDir = "~/nixos";
+			flakeDir = "~/NixOS";
 		in {
 			ll = "ls -l";
 			la = "ls -la";

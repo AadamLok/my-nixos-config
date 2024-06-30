@@ -86,13 +86,11 @@
 			"networkmanager" 
 			"wheel"
 		];
+		shell = pkgs.zsh;
 		packages = with pkgs; [
 			vlc
 		];
 	};
-
-	# Install FireFox
-	programs.firefox.enable = true;
 
 	# Allow unfree packages
 	nixpkgs.config.allowUnfree = true;
@@ -107,6 +105,11 @@
 		xdg-utils
 		home-manager
 	];
+
+	programs = {
+		firefox.enable = true;
+		zsh.enable = true;
+	};
 
 	xdg = {
 		autostart.enable = true;
