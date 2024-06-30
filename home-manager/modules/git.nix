@@ -3,9 +3,9 @@
 		enable = true;
 		userName = "AadamLok";
 		userEmail = "alokhandwala@umass.edu";
-		#signing = {
-		#	signByDefault = true;
-		#	key = "79293CA28AD1069C";
-		#};
+		signing = {
+			signByDefault = true;
+			key = "5F5E2449F9156079";
+		};
 	};
 }
