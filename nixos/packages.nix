@@ -34,6 +34,7 @@
 		unzip
 		zip
 		gum # Something to explore
+		nvtopPackages.nvidia
 
 		# NixOS helper
 		home-manager
