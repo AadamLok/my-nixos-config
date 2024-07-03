@@ -3,7 +3,7 @@
 {
 	imports = [
 		./hardware-configuration.nix
-		./nvidia-rtx.nix
+		#./nvidia-rtx.nix
 	];
 
 	# Boot Loader for efi files
@@ -51,9 +51,6 @@
 	# X11 Windowing System
 	services.xserver = {
 		enable = true;
-		videoDrivers = [ 
-			"nvidia" 
-		];
 		xkb = {
 			variant = "";
 			layout = "us";
@@ -123,6 +120,6 @@
 	};
 
 	# System Version NEVER CHANGE
-	system.stateVersion = "23.11";
+	system.stateVersion = "24.05";
 	
 }
