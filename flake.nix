@@ -9,15 +9,18 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		
-		plasma-manager = {
-			url = "github:nix-community/plasma-manager";
-			inputs.nixpkgs.follows = "nixpkgs";
-			inputs.home-manager.follows = "home-manager";
+		hyprland = {
+			url = "github:hyprwm/Hyprland";
+		};
+
+		hyprland-plugins = {
+			url = "github:hyprwm/hyprland-plugins";
+			inputs.hyprland.follows = "hyprland";
 		};
 	
 	};
 
-	outputs = { nixpkgs, home-manager, plasma-manager, ... }: let 
+	outputs = { nixpkgs, home-manager, ... } @ inputs : let 
 		system = "x86_64-linux";
 	in {
 		
@@ -31,7 +34,6 @@
 		homeConfigurations.aadamlok = home-manager.lib.homeManagerConfiguration {
 			pkgs = nixpkgs.legacyPackages.${system};
 			modules = [
-				plasma-manager.homeManagerModules.plasma-manager
 				./home-manager/home.nix
 			];
 		};

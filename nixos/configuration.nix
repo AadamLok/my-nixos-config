@@ -1,4 +1,4 @@
-{ config, pkgs, ... } : 
+{ config, pkgs, inputs, ... } : 
 
 {
 	imports = [
@@ -62,7 +62,7 @@
 		enable = true;
 		theme = "breeze";
 	};
-	services.desktopManager.plasma6.enable = true;
+	#services.desktopManager.plasma6.enable = true;
 
 	# Sound Managment with Pipewire
 	sound.enable = true;
@@ -105,6 +105,10 @@
 
 	programs = {
 		firefox.enable = true;
+		hyprland = {
+			enable = true;
+			package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+		};
 		zsh.enable = true;
 		gnupg.agent = {
 			enable = true;
