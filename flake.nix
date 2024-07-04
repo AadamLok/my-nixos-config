@@ -26,6 +26,9 @@
 		
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			inherit system;
+			specialArgs = {
+        			inherit inputs;
+      			};
 			modules = [
 				./nixos/configuration.nix
 			];	
@@ -33,6 +36,9 @@
 
 		homeConfigurations.aadamlok = home-manager.lib.homeManagerConfiguration {
 			pkgs = nixpkgs.legacyPackages.${system};
+			specialArgs = {
+				inherit inputs;
+			};
 			modules = [
 				./home-manager/home.nix
 			];
