@@ -50,7 +50,7 @@
 
 	# X11 Windowing System
 	services.xserver = {
-		enable = true;
+		enable = false;
 		xkb = {
 			variant = "";
 			layout = "us";
@@ -60,7 +60,7 @@
 	# KDE Plasma Desktop Environment
 	services.displayManager.sddm = {
 		enable = true;
-		theme = "breeze";
+		wayland.enable = true;
 	};
 	#services.desktopManager.plasma6.enable = true;
 
