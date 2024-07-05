@@ -10,15 +10,21 @@ in
 		enable = true;
 		
 		plugins = [
-			inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
 		];
 		
 		settings = {
 			monitor = ", preferred, auto, auto";
+			"$terminal" = "kitty";
+			"$fileManager" = "dolphin";
+			"$menu" = "wofi --show drun";
 			"$mod" = "SUPER";
 			bind = [
 				"$mod, F, exec, firefox"
-				"$mod, Q, exec, kitty"
+				"$mod, Q, exec, $terminal"
+				"$mod, M, exit"
+				"$mod, E, exec, $fileManager"
+				"$mod, R, exec, $menu"
+				"$mod, C, killactive"
 			] 
 			++ (
 				builtins.concatLists (builtins.genList (
