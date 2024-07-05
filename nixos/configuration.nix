@@ -106,7 +106,7 @@
 		mako
 		swww
 		kitty
-		rofi-wayland
+		wofi
 	];
 
 	programs = {

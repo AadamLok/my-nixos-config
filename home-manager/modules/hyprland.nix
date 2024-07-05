@@ -38,19 +38,6 @@ in
 				10)
 			);
 			exec-once = ''${startupScript}/bin/start'';
-			"plugin:borders-plus-plus" = {
-				add_border = 1;
-				"col.border_1" = "rgb(ffffff)";
-				"col.border_2" = "rgb(2222ff)";
-				border_size_1 = 10;
-				border_size_2 = -1;
-				
-				natural_rounding = "yes";
-			};
 		};
-	};
-	
-	programs.waybar = {
-		enable = true;
 	};
 }
