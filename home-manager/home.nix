@@ -13,5 +13,6 @@
 		./modules/git.nix
 		./modules/hyprland.nix
 		./modules/fonts.nix
+		./modules/waybar.nix
 	];
 }
