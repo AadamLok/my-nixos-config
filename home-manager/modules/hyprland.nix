@@ -1,8 +1,8 @@
 { config, pkgs, inputs, ... } :
 let
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-		waybar &
-		swww init &
+		${pkgs.waybar}/bin/waybar &
+		${pkgs.swww}/bin/swww init &
 	'';
 in
 {
@@ -10,7 +10,7 @@ in
 		enable = true;
 		
 		plugins = [
-			inputs.hyprland.plugins.packages."${pkgs.system}".borders-plus-plus
+			inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
 		];
 		
 		settings = {
