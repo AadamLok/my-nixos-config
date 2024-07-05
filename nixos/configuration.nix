@@ -101,6 +101,12 @@
 		nixos-icons
 		xdg-utils
 		home-manager
+		waybar
+		libnotify
+		mako
+		swww
+		kitty
+		rofi-wayland
 	];
 
 	programs = {
@@ -108,6 +114,7 @@
 		hyprland = {
 			enable = true;
 			package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+			xwayland.enable = true;
 		};
 		zsh.enable = true;
 		gnupg.agent = {
@@ -117,6 +124,12 @@
 	};
 
 	xdg = {
+		portal = {
+			enable = true;
+			extraPortals = [
+				pkgs.xdg-desktop-portal-gtk
+			];
+		};
 		autostart.enable = true;
 		icons.enable = true;
 		menus.enable = true;
