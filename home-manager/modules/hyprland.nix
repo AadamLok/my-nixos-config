@@ -3,6 +3,8 @@ let
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
 		${pkgs.waybar}/bin/waybar &
 		${pkgs.swww}/bin/swww init &
+		sleep 1
+		${pkgs.swww}/bin/swww img ${./wallpaper/hyprland_anime_wallpaper.png} &
 	'';
 in
 {
