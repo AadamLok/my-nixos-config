@@ -133,8 +133,7 @@
 			}
 
 			window#waybar {
-				background: #292b2e;
-				color: #fdf6e3;
+				background-color: transparent;
 			}
 
 			#custom-right-arrow-dark,
