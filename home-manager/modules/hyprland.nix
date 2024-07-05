@@ -38,6 +38,31 @@ in
 				10)
 			);
 			exec-once = ''${startupScript}/bin/start'';
+			genral = {
+				gaps_in = 5;
+				gaps_out = 20;
+				border_size = 2;
+				"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+				"col.inactive_border" = "rgba(595959aa)";
+				resize_on_border = true;
+				allow_tearing = false;
+				layout = dwindle;
+			};
+			decoration = {
+				rounding = 10;
+				active_opacity = 1.0;
+				inactive_opacity = 1.0;
+				drop_shadow = true;
+				shadow_range = 4;
+				shadow_render_power = 3;
+				"col.shadow" = "rgba(1a1a1aee)";
+				blur = {
+					enable = true;
+					size = 3;
+					passes = 1;
+					vibrancy = 0.1696;
+				};
+			};
 		};
 	};
 }
