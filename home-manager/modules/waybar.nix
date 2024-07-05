@@ -6,37 +6,37 @@
 			layer = "top";
 			position= "bottom";
 			modules-left = [
-				"sway/workspaces",
+				"sway/workspaces"
 				"custom/right-arrow-dark"
 			];
 			modules-center = [
-				"custom/left-arrow-dark",
-				"clock#1",
-				"custom/left-arrow-light",
-				"custom/left-arrow-dark",
-				"clock#2",
-				"custom/right-arrow-dark",
-				"custom/right-arrow-light",
-				"clock#3",
+				"custom/left-arrow-dark"
+				"clock#1"
+				"custom/left-arrow-light"
+				"custom/left-arrow-dark"
+				"clock#2"
+				"custom/right-arrow-dark"
+				"custom/right-arrow-light"
+				"clock#3"
 				"custom/right-arrow-dark"
 			];
 			modules-right = [
-				"custom/left-arrow-dark",
-				"pulseaudio",
-				"custom/left-arrow-light",
-				"custom/left-arrow-dark",
-				"memory",
-				"custom/left-arrow-light",
-				"custom/left-arrow-dark",
-				"cpu",
-				"custom/left-arrow-light",
-				"custom/left-arrow-dark",
-				"battery",
-				"custom/left-arrow-light",
-				"custom/left-arrow-dark",
-				"disk",
-				"custom/left-arrow-light",
-				"custom/left-arrow-dark",
+				"custom/left-arrow-dark"
+				"pulseaudio"
+				"custom/left-arrow-light"
+				"custom/left-arrow-dark"
+				"memory"
+				"custom/left-arrow-light"
+				"custom/left-arrow-dark"
+				"cpu"
+				"custom/left-arrow-light"
+				"custom/left-arrow-dark"
+				"battery"
+				"custom/left-arrow-light"
+				"custom/left-arrow-dark"
+				"disk"
+				"custom/left-arrow-light"
+				"custom/left-arrow-dark"
 				"tray"
 			];
 
