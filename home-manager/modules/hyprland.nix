@@ -1,4 +1,10 @@
 { config, pkgs, inputs, ... } :
+let
+	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+		waybar &
+		swww init &
+	'';
+in
 {
 	wayland.windowManager.hyprland = {
 		enable = true;
@@ -26,6 +32,7 @@
 				)
 				10)
 			);
+			exec-once = ''${startupScript}/bin/start'';
 			"plugin:borders-plus-plus" = {
 				add_border = 1;
 				"col.border_1" = "rgb(ffffff)";
