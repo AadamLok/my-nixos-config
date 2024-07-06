@@ -26,6 +26,7 @@ in
 				"$mod, M, exit"
 				"$mod, E, exec, $fileManager"
 				"$mod, R, exec, $menu"
+				"$mod, V, exec, code"
 				"$mod, C, killactive"
 				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 			] 
@@ -81,6 +82,10 @@ in
 					"workspaces, 1, 6, default"
 				];
 			};
+			env = [
+				"QT_QPA_PLATFORM,wayland"
+				"QT_QPA_PLATFORMTHEME,qt6ct"
+			];
 		};
 	};
 }

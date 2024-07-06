@@ -116,7 +116,13 @@
 		kitty
 		wofi
 		vscode
+		libsForQt5.qt5ct
+		libsForQt5.qtstyleplugin-kvantum
+		libsForQt5.dolphin
+		libsForQt5.breeze-icons
 	];
+
+	environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
 	programs = {
 		firefox.enable = true;
@@ -144,6 +150,16 @@
 		menus.enable = true;
 		mime.enable = true;
 	};
+
+	nixpkgs.config.qt5 = {
+	 	enable = true;
+		platformTheme = "qt5ct"; 
+		style = {
+			package = pkgs.utterly-nord-plasma;
+			name = "Utterly Nord Plasma";
+		};
+	};
+
 
 	# System Version NEVER CHANGE
 	system.stateVersion = "24.05";

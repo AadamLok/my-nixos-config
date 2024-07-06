@@ -1,19 +1,21 @@
  { config, pkgs, inputs, ... }:
 {
-	enable = true;
-	enableExtensionUpdateCheck = true;
-	enableUpdateCheck = true;
-	extensions = [
-	];
-	globalSnippets = [
-	];
-	keybindings = [
-	];
-	languageSnippets = {
+	programs.vscode = {
+		enable = true;
+		enableExtensionUpdateCheck = true;
+		enableUpdateCheck = true;
+		extensions = [
+		];
+		globalSnippets = [
+		];
+		keybindings = [
+		];
+		languageSnippets = {
+		};
+		package = pkgs.vscodium;
+		userSettings = {
+		};
+		userTasks = {
+		};	
 	};
-	package = pkgs.vscodium;
-	userSettings = {
-	};
-	userTasks = {
-	};	
 }
