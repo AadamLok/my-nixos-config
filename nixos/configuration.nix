@@ -3,6 +3,7 @@
 {
 	imports = [
 		./hardware-configuration.nix
+		./surface-pro.nix
 		#./nvidia-rtx.nix
 	];
 
