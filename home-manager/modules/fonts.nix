@@ -13,5 +13,4 @@
 		noto-fonts-emoji
 		proggyfonts
 	];
-	
 }

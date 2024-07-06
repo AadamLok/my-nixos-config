@@ -41,21 +41,15 @@
 					reverse-scrolling = 1;
 					format = "{volume}% {icon} {format_source}";
 					format-bluetooth = "{volume}% {icon} {format_source}";
-					format-bluetooth-muted = " {icon} {format_source}";
-					format-muted = "婢 {format_source}";
+					format-bluetooth-muted = " {icon} {format_source}";
+					format-muted = " {format_source}";
 					format-source = "{volume}% ";
 					format-source-muted = "";
 					format-icons = {
 						headphone = "";
-						hands-free = "";
-						headset = "";
-						phone = "";
-						portable = "";
-						car = "";
 						default = [
-							"奄"
-							"奔"
-							"\\uf6a8"
+							""
+							""
 						];
 					};
 					on-click = "pavucontrol";
@@ -63,7 +57,7 @@
 				};
 
 				"memory" = {
-					format = "{percentage}% ";
+					format = "{percentage}% ";
 				};
 
 				"clock" = {
@@ -75,13 +69,12 @@
 					interval = 5;
 					format = "{usage:2}% {icon}";
 					format-icons = [
-						""
-						""
-						""
-						""
-						""
-						""
-						""
+						""
+						""
+						""
+						""
+						""
+						""
 					];
 				};
 				battery = {
@@ -91,20 +84,15 @@
 						critical = 15;
 					};
 					format = "{capacity}% {icon}";
-					format-charging = "{capacity}% ";
+					format-charging = "{capacity}% ";
 					format-plugged = "{capacity}% ";
 					format-alt = "{time} {icon}";
 					format-icons = [
-						""
-						""
-						""
-						""
-						""
-						""
-						""
-						""
-						""
-						""
+						""
+						""
+						""
+						""
+						""	
 					];
 				};
 				tray = {
@@ -118,7 +106,7 @@
 				border: none;
 				border-radius: 0;
 				/* `otf-font-awesome` is required to be installed for icons */
-				font-family: Liberation Mono;
+				font-family: Liberation Mono, "Font Awesome 6 Free";
 				min-height: 20px;
 			}
 
@@ -198,7 +186,7 @@
 				background: #383c4a;
 			}
 
-			#backlight {
+			#cpu {
 				margin-right: 8px;
 				padding-left: 16px;
 				padding-right: 16px;
