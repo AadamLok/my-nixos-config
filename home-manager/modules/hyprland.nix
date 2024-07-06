@@ -4,7 +4,7 @@ let
 		${pkgs.waybar}/bin/waybar &
 		${pkgs.swww}/bin/swww init &
 		sleep 1
-		${pkgs.swww}/bin/swww img ${./wallpaper/hyprland_anime_wallpaper.png} &
+		${pkgs.swww}/bin/swww img ~/Pictures/hyprland_anime_wallpaper.png
 	'';
 in
 {
@@ -33,8 +33,8 @@ in
 					x: let
 						ws = builtins.toString (x);
 					in [
-						"$mod, ${ws}, workspace, ${toString (x+1)}"
-						"$mod SHIFT, ${ws}, movetoworkspace, ${toString (x+1)}"
+						"$mod, ${ws}, workspace, ${toString (x)}"
+						"$mod SHIFT, ${ws}, movetoworkspace, ${toString (x)}"
 					]
 				)
 				10)
@@ -42,7 +42,7 @@ in
 			exec-once = ''${startupScript}/bin/start'';
 			general = {
 				gaps_in = 5;
-				gaps_out = 20;
+				gaps_out = "10 20 20 20";
 				border_size = 2;
 				"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
 				"col.inactive_border" = "rgba(595959aa)";

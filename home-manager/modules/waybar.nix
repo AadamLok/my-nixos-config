@@ -4,201 +4,254 @@
 		enable = true;
 		settings = {
 			mainbar = {
-			layer = "top";
-			position = "top";
-			modules-left = [
-				"sway/workspaces"
-				"custom/right-arrow-dark"
-			];
-			modules-center = [
-				"custom/left-arrow-dark"
-				"clock#1"
-				"custom/left-arrow-light"
-				"custom/left-arrow-dark"
-				"clock#2"
-				"custom/right-arrow-dark"
-				"custom/right-arrow-light"
-				"clock#3"
-				"custom/right-arrow-dark"
-			];
-			modules-right = [
-				"custom/left-arrow-dark"
-				"pulseaudio"
-				"custom/left-arrow-light"
-				"custom/left-arrow-dark"
-				"memory"
-				"custom/left-arrow-light"
-				"custom/left-arrow-dark"
-				"cpu"
-				"custom/left-arrow-light"
-				"custom/left-arrow-dark"
-				"battery"
-				"custom/left-arrow-light"
-				"custom/left-arrow-dark"
-				"disk"
-				"custom/left-arrow-light"
-				"custom/left-arrow-dark"
-				"tray"
-			];
+				layer = "top";
+				position = "top";
+				margin = "8 20 0 20";
+				modules-left = [
+					"hyprland/workspaces"
+				];
+				modules-center = [
+					"clock"
+				];
+				modules-right = [
+					"pulseaudio"
+					"memory"
+					"cpu"
+					"battery"
+					"tray"
+				];
 
-			"custom/left-arrow-dark" = {
-				format =  "";
-				tooltip =  false;
-			};
-			"custom/left-arrow-light" = {
-				format = "";
-				tooltip = false;
-			};
-			"custom/right-arrow-dark" = {
-				format = "";
-				tooltip = false;
-			};
-			"custom/right-arrow-light" = {
-				format = "";
-				tooltip = false;
-			};
+				"hyprland/workspaces" = {
+					disable-scroll = true;
+					format = "{name} {icon}";
+					format-icons = {
+						active =  " ";
+						default = " ";
+					};
+					persistent_workspaces = {
+						"1" = [];
+						"2" = [];
+						"3" = [];
+						"4" = [];
+						"5" = [];
+					};
+				};
+				
+				"pulseaudio" = {
+					reverse-scrolling = 1;
+					format = "{volume}% {icon} {format_source}";
+					format-bluetooth = "{volume}% {icon} {format_source}";
+					format-bluetooth-muted = " {icon} {format_source}";
+					format-muted = "婢 {format_source}";
+					format-source = "{volume}% ";
+					format-source-muted = "";
+					format-icons = {
+						headphone = "";
+						hands-free = "";
+						headset = "";
+						phone = "";
+						portable = "";
+						car = "";
+						default = [
+							"奄"
+							"奔"
+							"\\uf6a8"
+						];
+					};
+					on-click = "pavucontrol";
+					min-length = 13;
+				};
 
-			"sway/workspaces" = {
-				disable-scroll = true;
-				format = "{name}";
-			};
+				"memory" = {
+					format = "{percentage}% ";
+				};
 
-			"clock#1" = {
-				format = "{:%a}";
-				tooltip = false;
-			};
-			"clock#2" = {
-				format = "{:%H:%M}";
-				tooltip = false;
-			};
-			"clock#3" = {
-				format = "{:%m-%d}";
-				tooltip = false;
-			};
-
-			pulseaudio = {
-				format = "{icon} {volume:2}%";
-				format-bluetooth = "{icon}  {volume}%";
-				format-muted =  "MUTE";
-				format-icons = {
-					headphones = "";
-					default = [
-						""
-						""
+				"clock" = {
+					timezone = "America/New_York";
+        				tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+					format =  "{:%a, %d %b, %I:%M %p}";
+				};
+				"cpu" = {
+					interval = 5;
+					format = "{usage:2}% {icon}";
+					format-icons = [
+						""
+						""
+						""
+						""
+						""
+						""
+						""
 					];
 				};
-				scroll-step = 5;
-				on-click = "pamixer -t";
-				on-click-right = "pavucontrol";
-			};
-			memory = {
-				interval = 5;
-				format = "Mem {}%";
-			};
-			cpu = {
-				interval = 5;
-				format = "CPU {usage:2}%";
-			};
-			battery = {
-				states = {
-					good = 95;
-					warning = 30;
-					critical = 15;
+				battery = {
+					states = {
+						good = 95;
+						warning = 30;
+						critical = 15;
+					};
+					format = "{capacity}% {icon}";
+					format-charging = "{capacity}% ";
+					format-plugged = "{capacity}% ";
+					format-alt = "{time} {icon}";
+					format-icons = [
+						""
+						""
+						""
+						""
+						""
+						""
+						""
+						""
+						""
+						""
+					];
 				};
-				format = "{icon} {capacity}%";
-				format-icons = [
-					""
-					""
-					""
-					""
-					""
-				];
-			};
-			disk = {
-				interval = 5;
-				format = "Disk {percentage_used:2}%";
-				path = "/";
-			};
-			tray = {
-				icon-size = 20;
-			};
+				tray = {
+					icon-size = 16;
+					spacing = 0;
+				};
 			};
 		};
-	style = ''
+		style = ''
 			* {
-				font-size: 14px;
-				font-family: monospace;
-				margin: 0px;
-				padding: 0px;
+				border: none;
+				border-radius: 0;
+				/* `otf-font-awesome` is required to be installed for icons */
+				font-family: Liberation Mono;
+				min-height: 20px;
 			}
 
 			window#waybar {
-				background-color: transparent;
+				background: transparent;
 			}
 
-			#custom-right-arrow-dark,
-			#custom-left-arrow-dark {
-				color: #1a1a1a;
-			}
-			#custom-right-arrow-light,
-			#custom-left-arrow-light {
-				color: #292b2e;
-				background: #1a1a1a;
+			window#waybar.hidden {
+				opacity: 0.2;
 			}
 
-			#workspaces,
-			#clock.1,
-			#clock.2,
-			#clock.3,
-			#pulseaudio,
-			#memory,
-			#cpu,
-			#battery,
-			#disk,
-			#tray {
-				background: #1a1a1a;
+			#workspaces {
+				margin-right: 8px;
+				border-radius: 10px;
+				transition: none;
+				background: #383c4a;
 			}
 
 			#workspaces button {
-				padding: 0 2px;
-				color: #fdf6e3;
+				transition: none;
+				color: #7c818c;
+				background: transparent;
+				padding: 5px;
+				font-size: 18px;
 			}
-			#workspaces button.focused {
-				color: #268bd2;
+
+			#workspaces button.persistent {
+				color: #7c818c;
+				font-size: 12px;
 			}
+
+			/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 			#workspaces button:hover {
+				transition: none;
 				box-shadow: inherit;
 				text-shadow: inherit;
+				border-radius: inherit;
+				color: #383c4a;
+				background: #7c818c;
 			}
-			#workspaces button:hover {
-				background: #1a1a1a;
-				border: #1a1a1a;
-				padding: 0 3px;
+
+			#workspaces button.focused {
+				color: white;
+			}
+
+			#clock {
+				padding-left: 16px;
+				padding-right: 16px;
+				border-radius: 10px 10px 10px 10px;
+				transition: none;
+				color: #ffffff;
+				background: #383c4a;
 			}
 
 			#pulseaudio {
-				color: #268bd2;
+				margin-right: 8px;
+				padding-left: 16px;
+				padding-right: 16px;
+				border-radius: 10px;
+				transition: none;
+				color: #ffffff;
+				background: #383c4a;
 			}
+
+			#pulseaudio.muted {
+				background-color: #90b1b1;
+				color: #2a5c45;
+			}
+
 			#memory {
-				color: #2aa198;
+				margin-right: 8px;
+				padding-left: 16px;
+				padding-right: 16px;
+				border-radius: 10px;
+				transition: none;
+				color: #ffffff;
+				background: #383c4a;
 			}
-			#cpu {
-				color: #6c71c4;
+
+			#backlight {
+				margin-right: 8px;
+				padding-left: 16px;
+				padding-right: 16px;
+				border-radius: 10px;
+				transition: none;
+				color: #ffffff;
+				background: #383c4a;
 			}
+
 			#battery {
-				color: #859900;
+				margin-right: 8px;
+				padding-left: 16px;
+				padding-right: 16px;
+				border-radius: 10px;
+				transition: none;
+				color: #ffffff;
+				background: #383c4a;
 			}
-			#disk {
-				color: #b58900;
+
+			#battery.charging {
+				color: #ffffff;
+				background-color: #26A65B;
 			}
-			
-			#clock,
-			#pulseaudio,
-			#memory,
-			#cpu,
-			#battery,
-			#disk {
-				padding: 0 10px;
+
+			#battery.warning:not(.charging) {
+				background-color: #ffbe61;
+				color: black;
+			}
+
+			#battery.critical:not(.charging) {
+				background-color: #f53c3c;
+				color: #ffffff;
+				animation-name: blink;
+				animation-duration: 0.5s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+			}
+
+			#tray {
+				padding-left: 16px;
+				padding-right: 16px;
+				border-radius: 10px;
+				transition: none;
+				color: #ffffff;
+				background: #383c4a;
+			}
+
+			@keyframes blink {
+				to {
+					background-color: #ffffff;
+					color: #000000;
+				}
 			}
 		'';
 	};

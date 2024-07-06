@@ -14,5 +14,6 @@
 		./modules/hyprland.nix
 		./modules/fonts.nix
 		./modules/waybar.nix
+		./modules/kitty.nix
 	];
 }
