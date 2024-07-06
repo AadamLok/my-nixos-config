@@ -35,7 +35,7 @@
       			};
 			modules = [
 				./nixos/configuration.nix
-				#nixos-hardware.nixosModules.microsoft-surface-pro-intel
+				nixos-hardware.nixosModules.microsoft-surface-pro-intel
 			];	
 		};
 

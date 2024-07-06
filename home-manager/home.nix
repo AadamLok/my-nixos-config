@@ -15,5 +15,6 @@
 		./modules/fonts.nix
 		./modules/waybar.nix
 		./modules/kitty.nix
+		./modules/vscode.nix
 	];
 }

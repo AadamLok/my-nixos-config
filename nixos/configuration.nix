@@ -3,7 +3,7 @@
 {
 	imports = [
 		./hardware-configuration.nix
-		./surface-pro.nix
+		#./surface-pro.nix
 		#./nvidia-rtx.nix
 	];
 
@@ -57,6 +57,13 @@
 			variant = "";
 			layout = "us";
 		};
+		wacom.enable = true;
+	};
+
+	services.libinput = {
+		enable = true;
+		touchpad.tapping = false;
+		touchpad.naturalScrolling = true;
 	};
 
 	# KDE Plasma Desktop Environment
@@ -109,6 +116,7 @@
 		swww
 		kitty
 		wofi
+		vscode
 	];
 
 	programs = {
