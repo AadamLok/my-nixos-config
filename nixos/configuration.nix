@@ -69,6 +69,7 @@
 	services.displayManager.sddm = {
 		enable = true;
 		wayland.enable = true;
+		theme = "plasma-chili";
 	};
 	#services.desktopManager.plasma6.enable = true;
 
@@ -120,6 +121,9 @@
 		libsForQt5.qtstyleplugin-kvantum
 		libsForQt5.dolphin
 		libsForQt5.breeze-icons
+		rnote
+		python3
+		gnumake
 	];
 
 	environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";

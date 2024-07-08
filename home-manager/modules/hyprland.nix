@@ -28,6 +28,7 @@ in
 				"$mod, R, exec, $menu"
 				"$mod, V, exec, code"
 				"$mod, C, killactive"
+				"$mod, N, exec, rnote"
 				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 			] 
 			++ (
@@ -81,6 +82,10 @@ in
 					"fade, 1, 7, default"
 					"workspaces, 1, 6, default"
 				];
+			};
+			gestures = {
+				workspace_swipe = true;
+				workspace_swipe_create_new = true;
 			};
 			env = [
 				"QT_QPA_PLATFORM,wayland"

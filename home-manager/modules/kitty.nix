@@ -5,5 +5,6 @@
 		settings = {
 			background_opacity = "0.7";
 		};
+		theme = "Adwaita darker";
 	};	
 } 

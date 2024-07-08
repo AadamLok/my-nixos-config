@@ -4,7 +4,8 @@
 		enable = true;
 		enableExtensionUpdateCheck = true;
 		enableUpdateCheck = true;
-		extensions = [
+		extensions = with pkgs.vscode-extensions; [
+			ms-python.python
 		];
 		globalSnippets = [
 		];
@@ -12,7 +13,7 @@
 		];
 		languageSnippets = {
 		};
-		package = pkgs.vscodium;
+		package = pkgs.vscode;
 		userSettings = {
 		};
 		userTasks = {

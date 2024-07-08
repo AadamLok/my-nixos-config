@@ -9,12 +9,14 @@
 				margin = "8 20 0 20";
 				modules-left = [
 					"hyprland/workspaces"
+					"wlr/taskbar"
 				];
 				modules-center = [
 					"clock"
 				];
 				modules-right = [
 					"pulseaudio"
+					"backlight"
 					"memory"
 					"cpu"
 					"battery"
@@ -36,6 +38,19 @@
 						"5" = [];
 					};
 				};
+
+
+				"wlr/taskbar" = {
+					format = "{icon}";
+					icon-size = 14;
+					icon-theme = "Numix-Circle";
+					tooltip-format = "{title}";
+					on-click = "activate";
+					on-click-middle = "close";
+					ignore-list = [
+						
+					];
+				};
 				
 				"pulseaudio" = {
 					reverse-scrolling = 1;
@@ -54,6 +69,15 @@
 					};
 					on-click = "pavucontrol";
 					min-length = 13;
+				};
+
+				"backlight" = {
+					device = "intel_backlight";
+					format = "{percent}% {icon}";
+					format-icons = [
+						""
+						""
+					];
 				};
 
 				"memory" = {
@@ -137,6 +161,7 @@
 				color: #7c818c;
 				font-size: 12px;
 			}
+			
 
 			/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 			#workspaces button:hover {
@@ -150,6 +175,11 @@
 
 			#workspaces button.focused {
 				color: white;
+			}
+			
+			#taskbar {
+				border-radius: 10px;
+				background: #383c4a;
 			}
 
 			#clock {
@@ -174,6 +204,16 @@
 			#pulseaudio.muted {
 				background-color: #90b1b1;
 				color: #2a5c45;
+			}
+
+			#backlight {
+				margin-right: 8px;
+				padding-left: 16px;
+				padding-right: 16px;
+				border-radius: 10px;
+				transition: none;
+				color: #ffffff;
+				background: #383c4a;
 			}
 
 			#memory {

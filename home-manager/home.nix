@@ -8,6 +8,8 @@
 		];
 	};
 
+	nixpkgs.config.allowUnfree = true;
+
 	imports = [
 		./modules/zsh.nix
 		./modules/git.nix
@@ -16,5 +18,6 @@
 		./modules/waybar.nix
 		./modules/kitty.nix
 		./modules/vscode.nix
+		./modules/mako.nix
 	];
 }
