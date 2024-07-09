@@ -2,6 +2,14 @@
 {
 	services.mako = {
 		enable = true;
-		borderRadius = 20;
+		
+		actions = true;
+		anchor = "top-right";
+
+		backgroundColor = "#1D1D1DEE";
+		borderRadius = 10;
+		borderColor = "#33CCFFEE";
+
+		defaultTimeout = 10000;
 	};
 }

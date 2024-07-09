@@ -124,6 +124,7 @@
 		rnote
 		python3
 		gnumake
+		brightnessctl
 	];
 
 	environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
