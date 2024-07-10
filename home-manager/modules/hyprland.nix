@@ -30,6 +30,9 @@ in
 				"$mod, C, killactive"
 				"$mod, N, exec, rnote"
 				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+				"$mod, equal, exec, hyprctl keyword cursor:zoom_factor 2"
+
+				"$mod, minus, exec, hyprctl keyword cursor:zoom_factor 1"
 			] 
 			++ (
 				builtins.concatLists (builtins.genList (

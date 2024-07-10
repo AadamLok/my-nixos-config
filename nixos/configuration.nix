@@ -128,6 +128,8 @@
 	];
 
 	environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
+	environment.sessionVariables.NIXOS_OZONE_WL = "1";	
+
 
 	programs = {
 		firefox.enable = true;
@@ -147,7 +149,6 @@
 		portal = {
 			enable = true;
 			extraPortals = [
-				pkgs.xdg-desktop-portal-gtk
 			];
 		};
 		autostart.enable = true;
