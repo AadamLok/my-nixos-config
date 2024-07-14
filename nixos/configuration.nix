@@ -125,7 +125,14 @@
 		python3
 		gnumake
 		brightnessctl
+		wl-clipboard
 		clipse
+		hyprshade
+		iwgtk
+		udiskie
+		hyprshot
+		libsForQt5.gwenview
+		gcc-unwrapped
 	];
 
 	environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";

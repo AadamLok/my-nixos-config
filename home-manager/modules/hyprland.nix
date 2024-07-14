@@ -3,6 +3,7 @@ let
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
 		${pkgs.waybar}/bin/waybar &
 		${pkgs.swww}/bin/swww init &
+		${pkgs.clipse}/bin/clipse -listen &
 		sleep 1
 		${pkgs.swww}/bin/swww img ~/Pictures/hyprland_anime_wallpaper.png
 	'';
@@ -29,10 +30,12 @@ in
 				"$mod, V, exec, code"
 				"$mod, C, killactive"
 				"$mod, N, exec, rnote"
+				"$mod, P, exec, kitty --class clipse -e zsh -c 'clipse'"	
 				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 				"$mod, equal, exec, hyprctl keyword cursor:zoom_factor 2"
 
 				"$mod, minus, exec, hyprctl keyword cursor:zoom_factor 1"
+				", Print, exec, hyprshot -m window"
 			] 
 			++ (
 				builtins.concatLists (builtins.genList (
@@ -95,6 +98,10 @@ in
 			env = [
 				"QT_QPA_PLATFORM,wayland"
 				"QT_QPA_PLATFORMTHEME,qt6ct"
+			];
+			windowrulev2 = [
+				"float,class:(clipse)"
+				"size 622 652, class:(clipse)"
 			];
 		};
 	};
