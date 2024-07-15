@@ -151,6 +151,10 @@
 			enable = true;
 			enableSSHSupport = true;
 		};
+		python = {
+			enable = true;
+			buildInputs = [ pkgs.stdenv.cc.cc.lib ];
+		};
 	};
 
 	xdg = {
