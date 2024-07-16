@@ -74,7 +74,7 @@
 	#services.desktopManager.plasma6.enable = true;
 
 	# Sound Managment with Pipewire
-	sound.enable = true;
+	#sound.enable = true;
 	hardware.pulseaudio.enable = false;
 	security.rtkit.enable = true;
 	services.pipewire = {
@@ -133,6 +133,7 @@
 		hyprshot
 		libsForQt5.gwenview
 		gcc-unwrapped
+		lm_sensors
 	];
 
 	environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
@@ -150,10 +151,6 @@
 		gnupg.agent = {
 			enable = true;
 			enableSSHSupport = true;
-		};
-		python = {
-			enable = true;
-			buildInputs = [ pkgs.stdenv.cc.cc.lib ];
 		};
 	};
 
