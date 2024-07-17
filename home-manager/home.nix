@@ -19,5 +19,6 @@
 		./modules/kitty.nix
 		./modules/vscode.nix
 		./modules/mako.nix
+		./modules/wofi.nix
 	];
 }
