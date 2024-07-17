@@ -15,13 +15,13 @@
 		
 		hyprland = {
 			url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		hyprland-plugins = {
 			url = "github:hyprwm/hyprland-plugins";
 			inputs.hyprland.follows = "hyprland";
-		};
-	
+		};	
 	};
 
 	outputs = { nixpkgs, home-manager, nixos-hardware, ... } @ inputs : let 
