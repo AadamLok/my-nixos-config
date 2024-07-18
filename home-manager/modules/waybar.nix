@@ -1,4 +1,22 @@
 { pkgs, ... }:
+let
+	wofi-power = pkgs.pkgs.writeShellScriptBin "wofi-power" ''
+		entries = "⇠ Logout\n⏾ Suspend\n⭮ Reboot\n⏻ Shutdown"
+
+		selected=$(echo -e "⇠ Logout\n⏾ Suspend\n⭮ Reboot\n⏻ Shutdown" | wofi -i --dmenu | awk '{print tolower($2)}')
+		
+		case $selected in
+			logout)
+				;;
+			suspend)
+				exec systemctl suspend;;
+			reboot)
+				exec systemctl reboot;;
+			shutdown)
+				exec systemctl poweroff -i;;
+		esac
+	'';
+in
 {
 	programs.waybar = {
 		enable = true;
@@ -20,7 +38,7 @@
 					"memory"
 					"cpu"
 					"battery"
-					"tray"
+					"custom/power"
 				];
 
 				"hyprland/workspaces" = {
@@ -68,7 +86,6 @@
 						];
 					};
 					on-click = "pavucontrol";
-					min-length = 13;
 				};
 
 				"backlight" = {
@@ -93,12 +110,14 @@
 					interval = 5;
 					format = "{usage:2}% {icon}";
 					format-icons = [
-						""
-						""
-						""
-						""
-						""
-						""
+						"▁"
+						"▂"
+						"▃"
+						"▄"
+						"▅"
+						"▆"
+						"▇"
+						"█"
 					];
 				};
 				battery = {
@@ -119,10 +138,12 @@
 						""	
 					];
 				};
-				tray = {
-					icon-size = 16;
-					spacing = 0;
+
+				"custom/power" = {
+					format = "";
+					on-click = ''${wofi-power}/bin/wofi-power'';
 				};
+
 			};
 		};
 		style = ''
@@ -143,7 +164,7 @@
 			}
 
 			#workspaces {
-				margin-right: 8px;
+				margin-right: 4px;
 				border-radius: 10px;
 				transition: none;
 				background: #383c4a;
@@ -183,18 +204,28 @@
 			}
 
 			#clock {
-				padding-left: 16px;
-				padding-right: 16px;
-				border-radius: 10px 10px 10px 10px;
+				padding-left: 8px;
+				padding-right: 8px;
+				border-radius: 10px;
+				transition: none;
+				color: #ffffff;
+				background: #383c4a;
+			}
+
+			#custom-touchscreen {
+				margin-right: 4px;
+				padding-left: 8px;
+				padding-right: 8px;
+				border-radius: 10px;
 				transition: none;
 				color: #ffffff;
 				background: #383c4a;
 			}
 
 			#pulseaudio {
-				margin-right: 8px;
-				padding-left: 16px;
-				padding-right: 16px;
+				margin-right: 4px;
+				padding-left: 8px;
+				padding-right: 8px;
 				border-radius: 10px;
 				transition: none;
 				color: #ffffff;
@@ -207,9 +238,9 @@
 			}
 
 			#backlight {
-				margin-right: 8px;
-				padding-left: 16px;
-				padding-right: 16px;
+				margin-right: 4px;
+				padding-left: 8px;
+				padding-right: 8px;
 				border-radius: 10px;
 				transition: none;
 				color: #ffffff;
@@ -217,29 +248,29 @@
 			}
 
 			#memory {
-				margin-right: 8px;
-				padding-left: 16px;
-				padding-right: 16px;
-				border-radius: 10px;
+				margin-right: 0px;
+				padding-left: 8px;
+				padding-right: 4px;
+				border-radius: 10px 0px 0px 10px;
 				transition: none;
 				color: #ffffff;
 				background: #383c4a;
 			}
 
 			#cpu {
-				margin-right: 8px;
-				padding-left: 16px;
-				padding-right: 16px;
-				border-radius: 10px;
+				margin-right: 4px;
+				padding-left: 4px;
+				padding-right: 8px;
+				border-radius: 0px 10px 10px 0px;
 				transition: none;
 				color: #ffffff;
 				background: #383c4a;
 			}
 
 			#battery {
-				margin-right: 8px;
-				padding-left: 16px;
-				padding-right: 16px;
+				margin-right: 0px;
+				padding-left: 8px;
+				padding-right: 8px;
 				border-radius: 10px;
 				transition: none;
 				color: #ffffff;
@@ -264,15 +295,6 @@
 				animation-timing-function: linear;
 				animation-iteration-count: infinite;
 				animation-direction: alternate;
-			}
-
-			#tray {
-				padding-left: 16px;
-				padding-right: 16px;
-				border-radius: 10px;
-				transition: none;
-				color: #ffffff;
-				background: #383c4a;
 			}
 
 			@keyframes blink {
