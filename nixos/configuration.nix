@@ -43,7 +43,7 @@
 	#time.timeZone = "UTC";#"America/New_York";
 	services.automatic-timezoned.enable = true;
 	location.provider = "geoclue2";
-	services.geoclue2.geoProviderUrl = "https://www.googleapis.com/geolocation/v1/geolocate?key=${google_api_key}";
+	services.geoclue2.geoProviderUrl = "https://www.googleapis.com/geolocation/v1/geolocate?key=${(builtins.readFile config.age.secrets.google_api_key.path)}";
 	services.geoclue2.enableWifi = false;
 
 services.redshift = {

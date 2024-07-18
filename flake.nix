@@ -21,23 +21,34 @@
 		hyprland-plugins = {
 			url = "github:hyprwm/hyprland-plugins";
 			inputs.hyprland.follows = "hyprland";
+		};
+
+		agenix = {
+			url = "github:ryantm/agenix";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};	
 	};
 
-	outputs = { nixpkgs, home-manager, nixos-hardware, ... } @ inputs : let 
+	outputs = { nixpkgs, home-manager, nixos-hardware, agenix, ... } @ inputs : let 
 		system = "x86_64-linux";
-		google_api_key = (builtins.readFile ./google-api-key);
 	in {
 		
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			inherit system;
 			specialArgs = {
         			inherit inputs;
-				inherit google_api_key;
 			};
 			modules = [
-				./nixos/configuration.nix
 				nixos-hardware.nixosModules.microsoft-surface-pro-intel
+				agenix.nixosModules.default
+				{
+          				environment.systemPackages = [ agenix.packages.${system}.default ];
+				}
+				{
+					age.identityPaths = [ "/home/aadamlok/.ssh/id_ed255"  ];
+					age.secrets.google_api_key.file = ./secrets/google_api_key.age;
+        			}
+				./nixos/configuration.nix
 			];	
 		};
 
