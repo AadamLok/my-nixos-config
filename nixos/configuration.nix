@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... } : 
+{ config, pkgs, inputs, lib, google_api_key, ... } : 
 
 {
 	imports = [
@@ -40,8 +40,24 @@
 	};
 
 	# Setting Time-Zone
-	time.timeZone = "America/New_York";
+	#time.timeZone = "UTC";#"America/New_York";
 	services.automatic-timezoned.enable = true;
+	location.provider = "geoclue2";
+	services.geoclue2.geoProviderUrl = "https://www.googleapis.com/geolocation/v1/geolocate?key=${google_api_key}";
+	services.geoclue2.enableWifi = false;
+
+services.redshift = {
+    enable = true;
+    brightness = {
+      # Note the string values below.
+      day = "1";
+      night = "1";
+    };
+    temperature = {
+      day = 5500;
+      night = 3700;
+    };
+  };
 
 	# Internationalisation Property
 	i18n.defaultLocale = "en_US.UTF-8";
@@ -69,7 +85,7 @@
 	services.displayManager.sddm = {
 		enable = true;
 		wayland.enable = true;
-		theme = "plasma-chili";
+		theme = "chili";
 	};
 	#services.desktopManager.plasma6.enable = true;
 
@@ -103,6 +119,7 @@
 
 	# System Wide Packages
 	environment.systemPackages = with pkgs; [
+		automatic-timezoned
 		vim
 		zsh
 		wget
@@ -134,6 +151,7 @@
 		libsForQt5.gwenview
 		gcc-unwrapped
 		lm_sensors
+		sddm-chili-theme
 	];
 
 	environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";

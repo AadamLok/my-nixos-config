@@ -7,12 +7,16 @@ let
 		
 		case $selected in
 			logout)
-				;;
+				notify-send -u normal "Loging Out!"
+				exec exit;;
 			suspend)
+				notify-send -u normal "Going to sleep!"
 				exec systemctl suspend;;
 			reboot)
+				notify-send -u normal "Starting Reboot!"
 				exec systemctl reboot;;
 			shutdown)
+				notify-send -u normal "See you later my friend!"
 				exec systemctl poweroff -i;;
 		esac
 	'';
@@ -102,7 +106,7 @@ in
 				};
 
 				"clock" = {
-					timezone = "America/New_York";
+					#timezone = "America/New_York";
         				tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
 					format =  "{:%a, %d %b, %I:%M %p}";
 				};
@@ -268,7 +272,7 @@ in
 			}
 
 			#battery {
-				margin-right: 0px;
+				margin-right: 4px;
 				padding-left: 8px;
 				padding-right: 8px;
 				border-radius: 10px;
@@ -303,6 +307,17 @@ in
 					color: #000000;
 				}
 			}
+
+			#custom-power {
+				margin-right: 0px;
+				padding-left: 8px;
+				padding-right: 8px;
+				border-radius: 10px;
+				transition: none;
+				color: #ffffff;
+				background: #383c4a;
+			}
+
 		'';
 	};
 }

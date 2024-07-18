@@ -26,13 +26,15 @@
 
 	outputs = { nixpkgs, home-manager, nixos-hardware, ... } @ inputs : let 
 		system = "x86_64-linux";
+		google_api_key = (builtins.readFile ./google-api-key);
 	in {
 		
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			inherit system;
 			specialArgs = {
         			inherit inputs;
-      			};
+				inherit google_api_key;
+			};
 			modules = [
 				./nixos/configuration.nix
 				nixos-hardware.nixosModules.microsoft-surface-pro-intel
