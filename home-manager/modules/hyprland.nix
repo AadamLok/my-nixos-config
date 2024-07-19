@@ -5,7 +5,7 @@ let
 		${pkgs.swww}/bin/swww init &
 		${pkgs.clipse}/bin/clipse -listen &
 		sleep 1
-		${pkgs.swww}/bin/swww img ~/Pictures/hyprland_anime_wallpaper.png
+		${pkgs.swww}/bin/swww img ~/Pictures/batman-rain-gif-desktop-wallpaper.gif
 	'';
 in
 {
@@ -13,6 +13,7 @@ in
 		enable = true;
 		package = inputs.hyprland.packages."${pkgs.system}".hyprland;	
 		plugins = [
+			#inputs.hyprspace.packages.${pkgs.system}.Hyprspace
 		];
 		
 		settings = {
@@ -57,7 +58,7 @@ in
 			exec-once = ''${startupScript}/bin/start'';
 			general = {
 				gaps_in = 5;
-				gaps_out = "10 20 20 20";
+				gaps_out = "10 10 10 10";
 				border_size = 2;
 				"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
 				"col.inactive_border" = "rgba(595959aa)";

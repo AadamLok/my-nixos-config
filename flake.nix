@@ -14,12 +14,19 @@
 		};
 		
 		hyprland = {
-			url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+			type = "git";
+			url = "https://github.com/hyprwm/Hyprland";
+			submodules = true;
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		hyprland-plugins = {
 			url = "github:hyprwm/hyprland-plugins";
+			inputs.hyprland.follows = "hyprland";
+		};
+
+		hyprspace = {
+			url = "github:KZDKM/Hyprspace";
 			inputs.hyprland.follows = "hyprland";
 		};
 
@@ -45,7 +52,7 @@
           				environment.systemPackages = [ agenix.packages.${system}.default ];
 				}
 				{
-					age.identityPaths = [ "/home/aadamlok/.ssh/id_ed255"  ];
+					age.identityPaths = [ "/home/aadamlok/.ssh/id_ed25519"  ];
 					age.secrets.google_api_key.file = ./secrets/google_api_key.age;
         			}
 				./nixos/configuration.nix

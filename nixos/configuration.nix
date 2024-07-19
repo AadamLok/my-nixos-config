@@ -46,19 +46,6 @@
 	services.geoclue2.geoProviderUrl = "https://www.googleapis.com/geolocation/v1/geolocate?key=${(builtins.readFile config.age.secrets.google_api_key.path)}";
 	services.geoclue2.enableWifi = false;
 
-services.redshift = {
-    enable = true;
-    brightness = {
-      # Note the string values below.
-      day = "1";
-      night = "1";
-    };
-    temperature = {
-      day = 5500;
-      night = 3700;
-    };
-  };
-
 	# Internationalisation Property
 	i18n.defaultLocale = "en_US.UTF-8";
 	
@@ -152,6 +139,7 @@ services.redshift = {
 		gcc-unwrapped
 		lm_sensors
 		sddm-chili-theme
+		openconnect
 	];
 
 	environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";

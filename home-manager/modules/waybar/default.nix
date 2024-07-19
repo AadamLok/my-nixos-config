@@ -8,7 +8,7 @@ let
 		case $selected in
 			logout)
 				notify-send -u normal "Loging Out!"
-				exec exit;;
+				exec hyprctl dispatch exit;;
 			suspend)
 				notify-send -u normal "Going to sleep!"
 				exec systemctl suspend;;
@@ -20,6 +20,17 @@ let
 				exec systemctl poweroff -i;;
 		esac
 	'';
+
+	quotes = pkgs.stdenv.mkDerivation {
+		name = "quotes";
+		propagatedBuildInputs = [
+			(pkgs.python3.withPackages (pythonPackages: with pythonPackages; [
+				# packages to install
+			]))
+		];
+		dontUnpack = true;
+		installPhase = "install -Dm755 ${./quotes.py} $out/bin/quotes";
+	};
 in
 {
 	programs.waybar = {
@@ -28,7 +39,7 @@ in
 			mainbar = {
 				layer = "top";
 				position = "top";
-				margin = "8 20 0 20";
+				margin = "4 10 0 10";
 				modules-left = [
 					"hyprland/workspaces"
 					"wlr/taskbar"
@@ -148,6 +159,22 @@ in
 					on-click = ''${wofi-power}/bin/wofi-power'';
 				};
 
+			};
+
+			bottombar = {
+				layer = "bottom";
+				position = "bottom";
+				exclusive = false;
+				margin = "0 0 12 0";
+				modules-left = [];
+				modules-center = ["custom/splash"];
+				modules-right = [];
+
+				"custom/splash" = {
+					exec = ''${quotes}/bin/quotes''; #"hyprctl splash";
+					interval = "once";
+					tooltip = false;
+				};
 			};
 		};
 		style = ''

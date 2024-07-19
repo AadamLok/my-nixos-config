@@ -15,7 +15,7 @@
 		./modules/git.nix
 		./modules/hyprland.nix
 		./modules/fonts.nix
-		./modules/waybar.nix
+		./modules/waybar/default.nix
 		./modules/kitty.nix
 		./modules/vscode.nix
 		./modules/mako.nix
