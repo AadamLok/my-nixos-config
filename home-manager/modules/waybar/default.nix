@@ -21,15 +21,17 @@ let
 		esac
 	'';
 
-	quotes = pkgs.stdenv.mkDerivation {
+	quotes = pkgs.stdenvNoCC.mkDerivation {
 		name = "quotes";
+		src = ./quotes;
 		propagatedBuildInputs = [
 			(pkgs.python3.withPackages (pythonPackages: with pythonPackages; [
 				# packages to install
 			]))
 		];
 		dontUnpack = true;
-		installPhase = "install -Dm755 ${./quotes.py} $out/bin/quotes";
+		installPhase = ''install -Dm755 $src/quotes.py $out/bin/quotes'';
+		postInstall = ''cp -vr $src/. $out'';
 	};
 in
 {
