@@ -165,6 +165,7 @@
 			enable = true;
 			extraPortals = [
 			];
+			wlr.enable = true;
 		};
 		autostart.enable = true;
 		icons.enable = true;

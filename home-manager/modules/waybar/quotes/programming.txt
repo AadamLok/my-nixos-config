@@ -1,0 +1,49 @@
+"One of the best programming skills you can have is knowing when to walk away for awhile." – Oscar Godson
+"Give someone a program; you frustrate them for a day; teach them how to program, and you frustrate them for a lifetime." – David Leinweber
+"No one in the brief history of computing has ever written a piece of perfect software. It’s unlikely that you’ll be the first." – Andy Hunt
+"A programming language is for thinking about programs, not for expressing programs you’ve already thought of. It should be a pencil, not a pen." – Paul Graham
+"Bad programmers worry about the code. Good programmers worry about data structures and their relationships." – Linus Torvalds
+"Any fool can write code that a computer can understand. Good programmers write code that humans can understand." – Martin Fowler
+"Everyday life is like programming, I guess. If you love something, you can put beauty into it." – Donald Knuth
+"Everybody in this country should learn to program a computer because it teaches you how to think." – Steve Jobs
+"A good programmer is someone who always looks both ways before crossing a one-way street." – Doug Linder
+"You might not think that programmers are artists, but programming is an extremely creative profession. It’s logic-based creativity." – John Romero
+"Every programmer is an author." – Sercan Leylek
+"The 50-50-90 rule: Anytime you have a 50-50 chance of getting something right, there’s a 90% probability you’ll get it wrong." – Anonymous
+"In software, the most beautiful code, the most beautiful functions, and the most beautiful programs are sometimes not there at all." – Jon Bentley
+"There are 10 types of people in this world, those who understand binary and those who don’t." – Anonymous
+"One of my most productive days was throwing away 1000 lines of code." – Ken Thompson
+"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live" – John Woods
+"A code is like love, it has created with clear intentions at the beginning, but it can get complicated." – Gerry Geek
+"Code never lies, comments sometimes do." – Ron Jeffries
+"Any code of your own that you haven’t looked at for six or more months might as well have been written by someone else." – (Eagleson’s Law)
+"Computers are useless. They can only give you answers." – Pablo Picasso
+"If the automobile had followed the same development cycle as the computer, a Rolls-Royce would today cost $100, get a million miles per gallon, and explode once a year, killing everyone inside." – Robert X. Cringely
+"The question of whether computers can think is like the question of whether submarines can swim." – Edsger W. Dijkstra
+"Never trust a computer you can’t throw out a window." – Steve Wozniak
+"Sometimes it pays to stay in bed on Monday rather than spending the rest of the week debugging Monday’s code." – Dan Salomon
+"Debugging becomes significantly easier if you first admit that you are the problem." – William Laeder
+"Fix the cause, not the symptom." – Steve Maguire
+"In programming, the hard part isn’t solving problems but deciding what problems to solve." – Paul Graham
+"First, solve the problem. Then write the code." – John Johnson
+"Sometimes it is the people no one can imagine anything of who do the things no one can imagine." – Alan Turing
+"Simplicity is the soul of efficiency." – Austin Freeman
+"The most disastrous thing that you can ever learn is your first programming language." – Alan Kay
+"To iterate is human, to recurse divine." – L. Peter Deutsch
+"Any sufficiently advanced technology is indistinguishable from magic." – Arthur C. Clarke
+"Knowledge is power." – Francis Bacon
+"A problem well stated is a problem half solved." – Charles Kettering
+"I am not a great programmer; I am just a good programmer with great habits." – Kent Beck
+"The best thing about a boolean is even if you are wrong, you are only off by a bit." – Anonymous
+"Walking on water and developing software from a specification are easy if both are frozen." – Edward V Berard
+"The most important property of a program is whether it accomplishes the intention of its user." – C.A.R. Hoare
+"It’s not a bug – it’s an undocumented feature." – Anonymous
+"What one programmer can do in one month, two programmers can do in two months." – Fred Brooks
+"Code is like humor. When you have to explain it, it’s bad." – Cory House
+"You should name a variable using the same care with which you name a first-born child." – Robert C. Martin
+"The best way to predict the future is to invent it." – Alan Kay
+"The best error message is the one that never shows up." – Thomas Fuchs
+"As a programmer, it is your job to put yourself out of business. What you do today can be automated tomorrow." – Doug McIlroy
+"There is always one more bug to fix." – Ellen Ullman
+"If debugging is the process of removing bugs, then programming must be the process of putting them in." – Edsger W. Dijkstra
+"Testing can only prove the presence of bugs, not their absence." – Edsger W. Dijkstra

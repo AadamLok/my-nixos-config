@@ -2,9 +2,8 @@
 let
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
 		${pkgs.waybar}/bin/waybar &
-		${pkgs.swww}/bin/swww init &
 		${pkgs.clipse}/bin/clipse -listen &
-		sleep 1
+		${pkgs.swww}/bin/swww init 
 		${pkgs.swww}/bin/swww img ~/Pictures/batman-rain-gif-desktop-wallpaper.gif
 	'';
 in

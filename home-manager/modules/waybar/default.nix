@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
 	wofi-power = pkgs.pkgs.writeShellScriptBin "wofi-power" ''
 		entries = "⇠ Logout\n⏾ Suspend\n⭮ Reboot\n⏻ Shutdown"
@@ -30,8 +30,11 @@ let
 			]))
 		];
 		dontUnpack = true;
-		installPhase = ''install -Dm755 $src/quotes.py $out/bin/quotes'';
-		postInstall = ''cp -vr $src/. $out'';
+		installPhase = ''
+			mkdir -p $out
+			cp -vr $src/. $out
+			install -Dm755 $src/quotes.py $out/bin/quotes
+		'';
 	};
 in
 {
@@ -173,7 +176,7 @@ in
 				modules-right = [];
 
 				"custom/splash" = {
-					exec = ''${quotes}/bin/quotes''; #"hyprctl splash";
+					exec = ''${quotes}/bin/quotes ${quotes}''; #"hyprctl splash";
 					interval = "once";
 					tooltip = false;
 				};

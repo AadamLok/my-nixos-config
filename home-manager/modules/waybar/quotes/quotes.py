@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 import random
 import os
+import sys
 
 def random_line(file):
     lines = file.read().splitlines()
-    myline = random.choice(lines)
-    return myline
+    return random.choice(lines)
 
 def get_random_file():
-   pass
+   files = ['rumi.txt', 'programming.txt']
+   return random.choice(files)
 
 if __name__ == "__main__":
+    main_dir = sys.argv[1]
     try:
-        f = open("../rumi.txt")
-        print("success")
+        f = open(os.path.join(main_dir, get_random_file()))
+        print(random_line(f))
     except Exception as e:
-        print("failed", e)
+        print("Failed with error: ", e)
+
