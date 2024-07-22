@@ -15,10 +15,11 @@
 		./modules/git.nix
 		./modules/hyprland.nix
 		./modules/fonts.nix
-		./modules/waybar/default.nix
+		./modules/waybar
 		./modules/kitty.nix
 		./modules/vscode.nix
 		./modules/mako.nix
 		./modules/wofi.nix
+		./modules/direnv
 	];
 }
