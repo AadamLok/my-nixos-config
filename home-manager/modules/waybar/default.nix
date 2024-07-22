@@ -3,7 +3,7 @@ let
 	wofi-power = pkgs.pkgs.writeShellScriptBin "wofi-power" ''
 		entries = "⇠ Logout\n⏾ Suspend\n⭮ Reboot\n⏻ Shutdown"
 
-		selected=$(echo -e "⇠ Logout\n⏾ Suspend\n⭮ Reboot\n⏻ Shutdown" | wofi -i --dmenu | awk '{print tolower($2)}')
+		selected=$(echo -e "⇠ Logout\n⏾ Suspend\n⭮ Reboot\n⏻ Shutdown" | wofi -i --dmenu --prompt "What do you want to do with the PC?" | awk '{print tolower($2)}')
 		
 		case $selected in
 			logout)

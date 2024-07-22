@@ -12,10 +12,9 @@ def get_random_file():
    return random.choice(files)
 
 if __name__ == "__main__":
-    main_dir = sys.argv[1]
+    os.chdir(sys.argv[1])
     try:
-        f = open(os.path.join(main_dir, get_random_file()))
+        f = open(get_random_file())
         print(random_line(f))
     except Exception as e:
         print("Failed with error: ", e)
-
