@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ... } :
 let
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+		dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 		${pkgs.waybar}/bin/waybar &
 		${pkgs.clipse}/bin/clipse -listen &
 		${pkgs.swww}/bin/swww init 
@@ -91,13 +92,17 @@ in
 					"workspaces, 1, 6, default"
 				];
 			};
+			cursor = {
+				no_hardware_cursors = true;
+			};
 			gestures = {
 				workspace_swipe = true;
 				workspace_swipe_create_new = true;
 			};
 			env = [
 				"QT_QPA_PLATFORM,wayland"
-				"QT_QPA_PLATFORMTHEME,qt6ct"
+				"QT_QPA_PLATFORMTHEME,qt5ct"
+				"HYPRCURSOR_THEME, theme_Dracula, 24"
 			];
 			windowrulev2 = [
 				"float,class:(clipse)"

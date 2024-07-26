@@ -3,6 +3,7 @@
 {
 	imports = [
 		./hardware-configuration.nix
+		./libcamera_surface.nix
 		#./nvidia-rtx.nix
 	];
 
@@ -98,6 +99,10 @@
 		shell = pkgs.zsh;
 		packages = with pkgs; [
 			vlc
+			rnote
+			vscode
+			ungoogled-chromium
+			zoom-us
 		];
 	};
 
@@ -120,12 +125,10 @@
 		swww
 		kitty
 		wofi
-		vscode
 		libsForQt5.qt5ct
 		libsForQt5.qtstyleplugin-kvantum
 		libsForQt5.dolphin
 		libsForQt5.breeze-icons
-		rnote
 		python3
 		gnumake
 		brightnessctl
@@ -140,10 +143,13 @@
 		lm_sensors
 		sddm-chili-theme
 		openconnect
+		hyprcursor
+		xdg-desktop-portal-hyprland
 	];
 
 	environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
-	environment.sessionVariables.NIXOS_OZONE_WL = "1";	
+	environment.sessionVariables.NIXOS_OZONE_WL = "1";
+	#environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";	
 
 
 	programs = {
@@ -164,6 +170,7 @@
 		portal = {
 			enable = true;
 			extraPortals = [
+				pkgs.xdg-desktop-portal-gtk
 			];
 			wlr.enable = true;
 		};

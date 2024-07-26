@@ -211,7 +211,11 @@ in
 				color: #7c818c;
 				background: transparent;
 				padding: 5px;
-				font-size: 18px;
+				font-size: 12px;
+			}
+
+			#workspaces button.active {
+				color: white;
 			}
 
 			#workspaces button.persistent {

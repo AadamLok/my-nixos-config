@@ -7,6 +7,10 @@
 			copy_on_select = true;
 			tab_bar_edge = "top";
 		};
-		theme = "Adwaita darker";
+		theme = "VSCode_Dark";
+		font = {
+			name = "MesloLGS Nerd Font Mono";
+			size = 10;
+		};
 	};	
 } 
